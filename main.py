@@ -1,7 +1,7 @@
 ###Le Jeu des Actions
 ###Créé par Rémy Weber et Charles-Augustin Videlaine
 ###Créé le 30 septembre 2021
-###Version du 15 février 2023
+###Version du 27 octobre 2023
 
 #Importation des modules random, pour générer le prix aléatoire des actions, et math, pour permettre d'arrondir à la partie entière du nombre d'actions achetables
 from random import*
