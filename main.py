@@ -19,18 +19,16 @@ def quitter():
   return
 
 #Définition de la fonction heure, qui permet d'indiquer l'heure et le jour au joueur, et de l'entrer dans le fichier contenant les scores
-repMax=100
-def heure(max):
-  for i in range(1,max):
+
+def heure():
     heure=strftime("Nous sommes le %d %b %Y, il est %H:%M:%S %Z.\n", localtime())
     print(heure)
-    clear()
-    sleep(1)
+
 
 
 def menuJeuInfini():
   clear()
-  print(heure(repMax))
+  heure()
   print('Parfait, vous avez choisi le mode de jeu "Infini".')
   choixDifficulteInfini=input("\nSouhaitez-vous jouer à la version facile (1) ou difficile (2) ? " )
   if choixDifficulteInfini=="1":
@@ -45,7 +43,7 @@ def menuJeuInfini():
 
 def jeuInfiniFacile():
   clear()
-  print(heure)
+  heure()
   contanbank=1000
   nombreActions=0
   choixTemps=input('Combien de temps souhaitez-vous jouer (en jours) ? ')
@@ -58,7 +56,8 @@ def jeuInfiniFacile():
     for i in range(choixTempsInt):
       os.system('clear')
       print("     /\       /‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  |‾‾‾‾‾‾‾‾‾‾| |\     | | \n    /  \     /             |            |       |          | | \    | |\n   /    \   /              |            |       |          | |  \   | | \n  /______\  \              |            |       |          | |   \  | | \n /        \  \             |            |       |          | |    \ | |\n/          \  \_____       |       _____|_____  |__________| |     \| .") 
-      print("\n",heure)
+      print("\n")
+      heure()
       print("\nJOUR :", i+1)
       valeurEntreprise=randint(15,1050)
       print("Votre compte en banque : ", contanbank,"€ \nLe nombre de jours restants : ", tps-1, " \nLe nombre d'actions que vous possédez : ",nombreActions, " \nLes actions de l'entreprise sont aujourd'hui élevées à ", valeurEntreprise,"€", sep="")
@@ -147,7 +146,7 @@ def jeuInfiniFacile():
 
 def jeuInfiniDifficile():
   clear()
-  print(heure)
+  heure()
   contanbank=1000
   nombreActions=0
   choixTemps=input('Combien de temps souhaitez-vous jouer (en jours) ? ')
@@ -171,7 +170,8 @@ def jeuInfiniDifficile():
       elif valeurEntreprise>=800 and valeurEntreprise<=1050:
         valeurEntreprise=randint(700,1050)
       print("     /\       /‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  |‾‾‾‾‾‾‾‾‾‾| |\     | | \n    /  \     /             |            |       |          | | \    | |\n   /    \   /              |            |       |          | |  \   | | \n  /______\  \              |            |       |          | |   \  | | \n /        \  \             |            |       |          | |    \ | |\n/          \  \_____       |       _____|_____  |__________| |     \| .") 
-      print("\n",heure)
+      print("\n")
+      heure()
       print("\nJOUR :", i+1)
       print("Votre compte en banque : ", contanbank,"€ \nLe nombre de jours restants : ", tps-1, " \nLe nombre d'actions que vous possédez : ",nombreActions, " \nLes actions de l'entreprise sont aujourd'hui élevées à ", valeurEntreprise,"€", sep="")
       valeurEntreprise2=valeurEntreprise
@@ -255,7 +255,7 @@ def jeuInfiniDifficile():
     
 def menuJeuMini():
   os.system('clear')
-  print(heure)
+  heure()
   print('Parfait, vous avez choisi le mode de jeu "Minimum".')
   choixDifficulteMini=input("\nSouhaitez-vous jouer à la version facile (1) ou difficile (2) ? " )
   if choixDifficulteMini=="1":
@@ -270,7 +270,7 @@ def menuJeuMini():
 
 def jeuMinimumFacile():
   os.system('clear')
-  print(heure)
+  heure()
   contanbank=1000
   nombreActions=0
   argentMini=input("Quelle somme d'argent voulez-vous atteindre ? ")
@@ -288,7 +288,8 @@ def jeuMinimumFacile():
       valeurEntreprise=randint(15,1050)
       jour+=1
       print("     /\       /‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  |‾‾‾‾‾‾‾‾‾‾| |\     | | \n    /  \     /             |            |       |          | | \    | |\n   /    \   /              |            |       |          | |  \   | | \n  /______\  \              |            |       |          | |   \  | | \n /        \  \             |            |       |          | |    \ | |\n/          \  \_____       |       _____|_____  |__________| |     \| .") 
-      print("\n",heure)
+      print("\n")
+      heure()
       print("\nJOUR :", jour)
       print("Votre compte en banque : ", contanbank,"€ \nIl vous faut ", argentMiniInt-contanbank,"€ avant de finir le jeu \nVous possédez ",nombreActions,  " actions. \nLes actions de l'entreprise sont aujourd'hui élevées à ", valeurEntreprise,"€", sep="")
       choixJeu=input("\nSouhaitez-vous acheter des actions (1), vendre des actions (2) ou passer au jour suivant (3) ? ")
@@ -346,7 +347,7 @@ def jeuMinimumFacile():
 
 def jeuMinimumDifficile():
   os.system('clear')
-  print(heure)
+  heure()
   contanbank=1000
   nombreActions=0
   argentMini=int(input("Quelle somme d'argent voulez-vous atteindre ? "))
@@ -374,7 +375,8 @@ def jeuMinimumDifficile():
         valeurEntreprise=randint(700,1050)
       jour+=1
       print("     /\       /‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  |‾‾‾‾‾‾‾‾‾‾| |\     | | \n    /  \     /             |            |       |          | | \    | |\n   /    \   /              |            |       |          | |  \   | | \n  /______\  \              |            |       |          | |   \  | | \n /        \  \             |            |       |          | |    \ | |\n/          \  \_____       |       _____|_____  |__________| |     \| .") 
-      print("\n",heure)
+      print("\n")
+      heure()
       print("\nJOUR :", jour)
       print("Votre compte en banque : ", contanbank,"€ \nIl vous faut ", argentMiniInt-contanbank,"€ avant de finir le jeu \nVous possédez ",nombreActions,  " actions. \nLes actions de l'entreprise sont aujourd'hui élevées à ", valeurEntreprise,"€", sep="")
       choixJeu=input("\nSouhaitez-vous acheter des actions (1), vendre des actions (2) ou passer au jour suivant (3) ? ")
@@ -430,7 +432,7 @@ def jeuMinimumDifficile():
 
 def menuJeuSansLim():
   os.system('clear')
-  print(heure)
+  heure()
   print('Parfait, vous avez choisi le mode de jeu "Sans limite".')
   choixDifficulteSansLim=input("\nSouhaitez-vous jouer à la version facile (1) ou difficile (2) ? " )
   if choixDifficulteSansLim=="1":
@@ -444,7 +446,7 @@ def menuJeuSansLim():
 
 def jeuSansLimFacile():
   os.system('clear')
-  print(heure)
+  heure()
   contanbank=1000
   nombreActions=0
   choixJeu=0
@@ -452,7 +454,8 @@ def jeuSansLimFacile():
   while choixJeu!=4:
       os.system('clear')
       print("     /\       /‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  |‾‾‾‾‾‾‾‾‾‾| |\     | | \n    /  \     /             |            |       |          | | \    | |\n   /    \   /              |            |       |          | |  \   | | \n  /______\  \              |            |       |          | |   \  | | \n /        \  \             |            |       |          | |    \ | |\n/          \  \_____       |       _____|_____  |__________| |     \| .") 
-      print("\n",heure)  
+      print("\n")
+      heure() 
       print("\nJOUR :", jour)
       valeurEntreprise=randint(15,1050)
       print("Votre compte en banque : ", contanbank,"€ \nLe nombre d'actions que vous possédez : ",nombreActions, " \nLes actions de l'entreprise sont aujourd'hui élevées à ", valeurEntreprise,"€", sep="")
@@ -525,7 +528,7 @@ def jeuSansLimFacile():
 
 def jeuSansLimDifficile():
   os.system('clear')
-  print(heure)
+  heure()
   contanbank=1000
   nombreActions=0
   choixJeu=0
@@ -544,7 +547,8 @@ def jeuSansLimDifficile():
       elif valeurEntreprise>=800 and valeurEntreprise<=1050:
         valeurEntreprise=randint(700,1050)
       print("     /\       /‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  ‾‾‾‾‾|‾‾‾‾‾  |‾‾‾‾‾‾‾‾‾‾| |\     | | \n    /  \     /             |            |       |          | | \    | |\n   /    \   /              |            |       |          | |  \   | | \n  /______\  \              |            |       |          | |   \  | | \n /        \  \             |            |       |          | |    \ | |\n/          \  \_____       |       _____|_____  |__________| |     \| .") 
-      print("\n",heure)  
+      print("\n")
+      heure() 
       print("\nJOUR :", jour)
       print("Votre compte en banque : ", contanbank,"€ \nLe nombre d'actions que vous possédez : ",nombreActions, " \nLes actions de l'entreprise sont aujourd'hui élevées à ", valeurEntreprise,"€", sep="")
       valeurEntreprise2=valeurEntreprise
